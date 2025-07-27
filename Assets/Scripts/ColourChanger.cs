@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ColourChanger : MonoBehaviour
 {
-    public static ColourChanger Instance { get; private set; }
 
     public SpriteRenderer background;
 
@@ -15,12 +14,6 @@ public class ColourChanger : MonoBehaviour
 
     public Color currentColour;
     public int currentColourIndex;
-
-    private void Awake()
-    {
-        Instance = this;
-    }
-
 
     // Update is called once per frame
     void Update()

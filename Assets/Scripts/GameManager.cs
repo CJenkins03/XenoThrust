@@ -1,3 +1,5 @@
+
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +15,8 @@ public class GameManager : MonoBehaviour
     bool canStart;
     public int highScore;
     bool gotHighScore;
+
+    public List<ColourChanger> backgroundList;
 
 
     [Header("UI")]
@@ -103,22 +107,31 @@ public class GameManager : MonoBehaviour
     {
         switch (score)
         {
-            case 100: ColourChanger.Instance.ChangeColour();
+            case 100:
+                ChangeBackgroundColour();
                 break;
             case 200:
-                ColourChanger.Instance.ChangeColour();
+                ChangeBackgroundColour();
                 break;
             case 300:
-                ColourChanger.Instance.ChangeColour();
+                ChangeBackgroundColour();
                 break;
             case 400:
-                ColourChanger.Instance.ChangeColour();
+                ChangeBackgroundColour();
                 break;
             case 1000:
-                ColourChanger.Instance.ChangeColour();
+                ChangeBackgroundColour();
                 break;
             default:
                 break;
+        }
+    }
+
+    private void ChangeBackgroundColour()
+    {
+        foreach (ColourChanger background in backgroundList)
+        {
+            background.ChangeColour();
         }
     }
 

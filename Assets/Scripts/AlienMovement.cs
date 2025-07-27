@@ -58,6 +58,15 @@ public class AlienMovement : MonoBehaviour
                 thrustVisual = true;
             }
 
+            if (Input.GetKeyDown(KeyCode.U)) GameManager.Instance.score = 95;
+
+            if (Input.GetKeyDown(KeyCode.I)) GameManager.Instance.score = 195;
+
+            if (Input.GetKeyDown(KeyCode.O)) GameManager.Instance.score = 295;
+
+            if (Input.GetKeyDown(KeyCode.P)) GameManager.Instance.score = 395;
+
+
             //Clamp the max speed
             if (rb.linearVelocityY > maxSpeed)
             {
